@@ -18,6 +18,16 @@ package io.realm.processor;
 
 import com.squareup.javawriter.JavaWriter;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.VariableElement;
@@ -26,9 +36,6 @@ import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import javax.tools.JavaFileObject;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.util.*;
 
 public class RealmProxyClassGenerator {
     private ProcessingEnvironment processingEnvironment;
@@ -79,7 +86,7 @@ public class RealmProxyClassGenerator {
         NULLABLE_JAVA_TYPES.put("byte[]", "new byte[0]");
     }
 
-    private static final Map<String, String> JAVA_TO_COLUMN_TYPES;
+    protected static final Map<String, String> JAVA_TO_COLUMN_TYPES;
     static {
         JAVA_TO_COLUMN_TYPES = new HashMap<String, String>();
         JAVA_TO_COLUMN_TYPES.put("byte", "ColumnType.INTEGER");

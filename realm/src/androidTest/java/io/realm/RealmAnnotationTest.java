@@ -50,10 +50,30 @@ public class RealmAnnotationTest extends AndroidTestCase {
         assertEquals(-1, table.getColumnIndex("ignoreString"));
     }
 
+    // Test if "index" annotation works with supported types
     public void testIndex() {
         Table table = testRealm.getTable(AnnotationTypes.class);
+
         assertTrue(table.hasSearchIndex(table.getColumnIndex("indexString")));
         assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexString")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexInt")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexInt")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexByte")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexByte")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexShort")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexShort")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexLong")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexLong")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexBoolean")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexBoolean")));
+
+        assertTrue(table.hasSearchIndex(table.getColumnIndex("indexDate")));
+        assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexDate")));
     }
 
     public void testHasPrimaryKeyNoIntIndex() {
