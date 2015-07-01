@@ -296,7 +296,7 @@ public class ClassMetaData {
                     // The field has the @Index annotation. It's only valid for column types:
                     // STRING, DATE, INTEGER, BOOLEAN
                     String elementTypeCanonicalName = variableElement.asType().toString();
-                    String columnType = RealmProxyClassGenerator.JAVA_TO_COLUMN_TYPES.get(elementTypeCanonicalName);
+                    String columnType = Constants.JAVA_TO_COLUMN_TYPES.get(elementTypeCanonicalName);
                     if (columnType != null && (columnType.equals("ColumnType.STRING") ||
                             columnType.equals("ColumnType.DATE") ||
                             columnType.equals("ColumnType.INTEGER") ||
