@@ -53,7 +53,7 @@ public class TestRealmObjectFileObject extends SimpleJavaFileObject {
         writer.emitPackage("some.test");
 
         // Import Realm classes
-        writer.emitImports("io.realm.RealmObject");
+        writer.emitImports("io.realm.*");
         writer.emitImports("io.realm.annotations.*");
 
         // Begin the class definition

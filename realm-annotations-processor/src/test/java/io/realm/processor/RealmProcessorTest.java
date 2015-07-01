@@ -245,11 +245,11 @@ public class RealmProcessorTest {
                 .failsToCompile();
     }
 
-    @Test
     // Supported "Index" annotation types
+    @Test
     public void compileIndexTypes() throws IOException {
         // TODO: Test "Byte", "Short", "Integer", "Long", "Boolean" when they are supported
-        String validIndexFieldTypes[] = {"byte", "short", "int", "long", "boolean", "String", "java.util.Date"};
+        final String validIndexFieldTypes[] = {"byte", "short", "int", "long", "boolean", "String", "java.util.Date"};
 
         for (String fieldType : validIndexFieldTypes) {
             TestRealmObjectFileObject javaFileObject =
@@ -261,11 +261,11 @@ public class RealmProcessorTest {
         }
     }
 
-    @Test
     // Unsupported "Index" annotation types
+    @Test
     public void compileInvalidIndexTypes() throws IOException {
         // TODO: Test "Float", "Double", when they are supported
-        String invalidIndexFieldTypes[] = {"float", "double", "byte[]", "Simple"};
+        final String invalidIndexFieldTypes[] = {"float", "double", "byte[]", "Simple", "RealmList"};
 
         for (String fieldType : invalidIndexFieldTypes) {
             TestRealmObjectFileObject javaFileObject =

@@ -303,8 +303,7 @@ public class ClassMetaData {
                             columnType.equals("ColumnType.BOOLEAN"))) {
                         indexedFields.add(variableElement);
                     } else {
-                        Utils.error("@Index is not applicable to this field " + element +
-                                ", which is a type of " + elementTypeCanonicalName + ".");
+                        Utils.error("@Index is not applicable to this field " + element + ".");
                         return false;
                     }
                 }
