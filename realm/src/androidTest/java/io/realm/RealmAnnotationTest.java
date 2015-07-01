@@ -18,6 +18,7 @@ package io.realm;
 
 import android.test.AndroidTestCase;
 
+import io.realm.entities.AnnotationIndexTypes;
 import io.realm.entities.AnnotationNameConventions;
 import io.realm.entities.AnnotationTypes;
 import io.realm.entities.PrimaryKeyAsLong;
@@ -52,7 +53,7 @@ public class RealmAnnotationTest extends AndroidTestCase {
 
     // Test if "index" annotation works with supported types
     public void testIndex() {
-        Table table = testRealm.getTable(AnnotationTypes.class);
+        Table table = testRealm.getTable(AnnotationIndexTypes.class);
 
         assertTrue(table.hasSearchIndex(table.getColumnIndex("indexString")));
         assertFalse(table.hasSearchIndex(table.getColumnIndex("notIndexString")));
