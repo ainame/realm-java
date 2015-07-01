@@ -35,7 +35,8 @@ inline static bool is_allowed_to_index(JNIEnv* env, DataType column_type) {
                 column_type == type_Bool ||
                 column_type == type_DateTime)) {
         ThrowException(env, IllegalArgument,
-                "This column type cannot be indexed - Only string/int/boolean/Date columns are supported at the moment.");
+                "This field cannot be indexed - "
+                "Only String/byte/short/int/long/boolean/Date fields are supported at the moment.");
         return false;
     }
     return true;
